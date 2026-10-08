@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MyMilo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Setup screen: shown until a device token is saved -->
+  <div id="setup" class="screen hidden">
+    <div class="setup-card">
+      <h1>mymilo</h1>
+      <p class="sub">Your personal AI assistant</p>
+      <p class="hint">
+        To connect this app, sign in to MyMilo in your browser, register this
+        device, and paste the token here. You only do this once.
+      </p>
+      <label>Server URL
+        <input id="server-url" type="url" value="https://mymilo.aimlds.org" autocomplete="off">
+      </label>
+      <label>Device token
+        <input id="device-token" type="text" placeholder="milo_…" autocomplete="off">
+      </label>
+      <button id="connect-btn" class="primary">Connect</button>
+      <p id="setup-error" class="error"></p>
+    </div>
+  </div>
+
+  <!-- Chat screen -->
+  <div id="chat" class="screen hidden">
+    <header>
+      <button id="menu-btn" aria-label="Sessions">☰</button>
+      <span class="title">mymilo</span>
+      <span id="status" class="status">●</span>
+    </header>
+
+    <aside id="drawer" class="drawer hidden">
+      <button id="new-chat-btn" class="primary">+ New chat</button>
+      <div id="session-list"></div>
+      <button id="disconnect-btn" class="danger">Disconnect device</button>
+    </aside>
+
+    <main id="log"></main>
+
+    <form id="composer">
+      <textarea id="input" rows="1" placeholder="Message Milo…" enterkeyhint="send"></textarea>
+      <button type="submit" id="send-btn" aria-label="Send">➤</button>
+    </form>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>

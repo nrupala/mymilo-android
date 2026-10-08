@@ -1,0 +1,104 @@
+:root {
+  --bg: #0e1116;
+  --panel: #171c24;
+  --panel2: #1f2632;
+  --text: #e8edf4;
+  --muted: #8b96a5;
+  --accent: #4f8cff;
+  --danger: #ff5d5d;
+  --user-bubble: #2456a6;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0; height: 100%;
+  background: var(--bg); color: var(--text);
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+}
+
+.hidden { display: none !important; }
+
+.screen { display: flex; flex-direction: column; height: 100dvh; }
+
+/* ── Setup ─────────────────────────── */
+.setup-card {
+  margin: auto; width: min(92vw, 420px);
+  background: var(--panel); border-radius: 16px; padding: 28px 22px;
+}
+.setup-card h1 { margin: 0; font-size: 30px; letter-spacing: -0.5px; }
+.setup-card .sub { color: var(--muted); margin: 4px 0 16px; }
+.setup-card .hint { font-size: 14px; line-height: 1.5; color: var(--muted); }
+.setup-card label { display: block; margin: 14px 0 6px; font-size: 13px; color: var(--muted); }
+.setup-card input {
+  width: 100%; margin-top: 6px; padding: 12px;
+  background: var(--panel2); border: 1px solid #2c3646; border-radius: 10px;
+  color: var(--text); font-size: 15px;
+}
+.error { color: var(--danger); font-size: 14px; min-height: 18px; }
+
+button.primary {
+  width: 100%; margin-top: 18px; padding: 13px;
+  background: var(--accent); color: #fff; border: 0; border-radius: 10px;
+  font-size: 16px; font-weight: 600; cursor: pointer;
+}
+button.danger {
+  width: 100%; margin-top: 18px; padding: 11px;
+  background: transparent; color: var(--danger);
+  border: 1px solid var(--danger); border-radius: 10px; font-size: 14px;
+}
+
+/* ── Chat ──────────────────────────── */
+header {
+  display: flex; align-items: center; gap: 12px;
+  padding: calc(10px + env(safe-area-inset-top)) 14px 10px;
+  background: var(--panel); border-bottom: 1px solid #232b38;
+}
+header .title { font-weight: 700; font-size: 18px; flex: 1; }
+header button {
+  background: none; border: 0; color: var(--text); font-size: 20px; cursor: pointer;
+}
+.status { color: #3ddc84; font-size: 12px; }
+.status.offline { color: var(--danger); }
+
+.drawer {
+  position: fixed; inset: 0 auto 0 0; width: min(78vw, 300px); z-index: 10;
+  background: var(--panel); padding: 18px 14px; overflow-y: auto;
+  box-shadow: 4px 0 24px rgba(0,0,0,.5);
+}
+#session-list { margin-top: 14px; }
+.session-item {
+  padding: 11px 10px; border-radius: 8px; cursor: pointer;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font-size: 14px;
+}
+.session-item:active, .session-item.active { background: var(--panel2); }
+
+main#log {
+  flex: 1; overflow-y: auto; padding: 16px 12px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.msg { max-width: 86%; padding: 10px 13px; border-radius: 14px; line-height: 1.45; }
+.msg.user { align-self: flex-end; background: var(--user-bubble); border-bottom-right-radius: 4px; }
+.msg.assistant { align-self: flex-start; background: var(--panel2); border-bottom-left-radius: 4px; }
+.msg.pending { opacity: .55; font-style: italic; }
+.msg .meta { display: block; margin-top: 6px; font-size: 11px; color: var(--muted); }
+.msg pre { overflow-x: auto; background: rgba(0,0,0,.35); padding: 8px; border-radius: 8px; }
+.msg code { font-size: 13px; }
+
+form#composer {
+  display: flex; gap: 8px; align-items: flex-end;
+  padding: 10px 10px calc(10px + env(safe-area-inset-bottom));
+  background: var(--panel); border-top: 1px solid #232b38;
+}
+#input {
+  flex: 1; resize: none; max-height: 140px; padding: 11px 13px;
+  background: var(--panel2); border: 1px solid #2c3646; border-radius: 20px;
+  color: var(--text); font-size: 16px; font-family: inherit;
+}
+#send-btn {
+  width: 44px; height: 44px; border-radius: 50%; border: 0;
+  background: var(--accent); color: #fff; font-size: 18px; cursor: pointer;
+}
+#send-btn:disabled { opacity: .45; }

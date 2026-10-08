@@ -1,0 +1,1 @@
+{"dependencies":{"@capacitor/android":"^6.1.2","@capacitor/core":"^6.1.2"},"description":"MyMilo Android app — native shell for the MyMilo personal AI assistant","devDependencies":{"@capacitor/cli":"^6.1.2"},"name":"mymilo-android","private":true,"scripts":{"build":"cap sync android","sync":"cap sync android"},"version":"0.1.0"}
