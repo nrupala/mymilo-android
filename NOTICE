@@ -1,0 +1,13 @@
+MyMilo Android
+
+Copyright (c) 2026 Nrupal Akolkar
+
+Owned by Nrupal Akolkar · Built with Muse by Meta
+
+This repository is the Android (Capacitor) shell for the MyMilo
+personal AI assistant.
+
+Third-party components remain the property of their respective
+owners and are governed by their own licenses. The principal
+dependencies are the Capacitor packages published by Ionic:
+@capacitor/core, @capacitor/android, and @capacitor/cli.
