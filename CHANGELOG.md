@@ -10,6 +10,9 @@ Earlier history is in the git log and the `build-N` releases.
 
 ## [Unreleased]
 
+- Licensed under AGPL-3.0 (portfolio license policy, owner decision 2026-10-11); canonical license text added as `LICENSE`.
+
+
 - Documentation brought to the project's standard: added `NOTICE`,
   `CONTRIBUTING.md`, and this changelog; `README.md` gained Tests
   and License sections.
